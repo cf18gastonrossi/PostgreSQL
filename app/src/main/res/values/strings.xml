@@ -1,0 +1,5 @@
+<resources>
+    <string name="appName">PostgreSQL</string>
+    <string name="titleEntrada">Entrada</string>
+    <string name="titleResultados">Resultados</string>
+</resources>

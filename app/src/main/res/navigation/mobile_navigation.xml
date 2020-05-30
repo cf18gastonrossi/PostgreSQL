@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigationEntrada">
+
+    <fragment
+        android:id="@+id/navigationEntrada"
+        android:name="com.example.postgresql.ui.home.HomeFragment"
+        android:label="@string/titleEntrada"
+        tools:layout="@layout/fragment_entrada" />
+
+    <fragment
+        android:id="@+id/navigationResultado"
+        android:name="com.example.postgresql.ui.dashboard.DashboardFragment"
+        android:label="@string/titleResultados"
+        tools:layout="@layout/fragment_resultados" />
+
+</navigation>
