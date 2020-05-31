@@ -93,10 +93,6 @@ public class Repository {
                             "' where id=" + id + ";");
                     ResultSet rs = statement.executeQuery("select * from usuaris;");
 
-                    System.out.println("9");
-                    while (rs.next()) {
-                        System.out.println(rs.getString("nom"));
-                    }
                 } catch (Exception e) {
                     System.out.println(e);
                 } finally {
@@ -125,12 +121,6 @@ public class Repository {
                 try {
                     Statement statement = connection.createStatement();
                     statement.executeUpdate("delete from usuaris where id=" + id + ";");
-                    ResultSet rs = statement.executeQuery("select * from usuaris;");
-
-                    System.out.println("9");
-                    while (rs.next()) {
-                        System.out.println(rs.getString("nom"));
-                    }
                 } catch (Exception e) {
                     System.out.println(e);
                 } finally {

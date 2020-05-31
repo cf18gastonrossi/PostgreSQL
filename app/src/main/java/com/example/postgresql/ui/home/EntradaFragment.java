@@ -48,9 +48,7 @@ public class EntradaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
-                    System.out.println("hola");
                     if (Usuari.checkInput(nombreAgregar.getText().toString(), fechaAgregar.getText().toString(), Integer.parseInt(idAgregar.getText().toString()))) {
-                        System.out.println("hola2");
                         homeViewModel.addNewUser(new Usuari(
                                 nombreAgregar.getText().toString(),
                                 Date.valueOf(fechaAgregar.getText().toString()),

@@ -15,16 +15,15 @@ public class EntradasViewModel extends ViewModel {
         repository = Repository.getRepository();
     }
 
-    public void addNewUser(Usuari usuari) throws SQLException, ClassNotFoundException {
-        System.out.println("hola3");
+    public void addNewUser(Usuari usuari) {
         repository.addNewUser(usuari);
     }
 
-    public void modifyUser(int id, String nombre) throws SQLException, ClassNotFoundException {
+    public void modifyUser(int id, String nombre) {
         repository.modifyUser(id,nombre);
     }
 
-    public void deleteUser(int id) throws SQLException, ClassNotFoundException {
+    public void deleteUser(int id) {
         repository.deleteUser(id);
     }
 }

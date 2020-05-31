@@ -34,7 +34,6 @@ public class ResultadosFragment extends Fragment {
                 ViewModelProviders.of(this).get(ResultadosViewModel.class);
         View root = inflater.inflate(R.layout.fragment_resultados, container, false);
 
-        resultadosViewModel.getUsuaris();
 
         setUpRecyclerView(root);
         return root;

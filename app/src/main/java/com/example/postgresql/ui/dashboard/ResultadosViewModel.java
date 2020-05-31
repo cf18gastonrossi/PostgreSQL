@@ -13,19 +13,18 @@ import java.util.ArrayList;
 
 public class ResultadosViewModel extends ViewModel {
 
-    Repository repository;
-    ArrayList<Usuari> listaUsuaris;
-    MutableLiveData<ArrayList<Usuari>> liveDataListaUsuaris;
+    private Repository repository;
+    private static ArrayList<Usuari> listaUsuaris = new ArrayList<>();
+    private MutableLiveData<ArrayList<Usuari>> liveDataListaUsuaris;
 
     public ResultadosViewModel() {
         repository = Repository.getRepository();
-        listaUsuaris = new ArrayList<>();
         liveDataListaUsuaris = new MutableLiveData<>();
+        getUsuaris();
     }
 
     public void getUsuaris() {
         repository.getUsuaris();
-        System.out.println("1");
         repository.getUsuarisLive().observeForever(new Observer<ArrayList<Usuari>>() {
             @Override
             public void onChanged(ArrayList<Usuari> usuaris) {
@@ -37,5 +36,9 @@ public class ResultadosViewModel extends ViewModel {
 
     public LiveData<ArrayList<Usuari>> getListaUsuaris() {
         return liveDataListaUsuaris;
+    }
+
+    public Usuari getUsuariAtPosition(int position)  {
+        return listaUsuaris.get(position);
     }
 }
