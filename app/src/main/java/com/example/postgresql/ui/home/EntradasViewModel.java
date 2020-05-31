@@ -16,6 +16,7 @@ public class EntradasViewModel extends ViewModel {
     }
 
     public void addNewUser(Usuari usuari) throws SQLException, ClassNotFoundException {
+        System.out.println("hola3");
         repository.addNewUser(usuari);
     }
 

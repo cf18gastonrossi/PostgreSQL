@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -47,13 +48,18 @@ public class EntradaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 try {
+                    System.out.println("hola");
                     if (Usuari.checkInput(nombreAgregar.getText().toString(), fechaAgregar.getText().toString(), Integer.parseInt(idAgregar.getText().toString()))) {
+                        System.out.println("hola2");
                         homeViewModel.addNewUser(new Usuari(
                                 nombreAgregar.getText().toString(),
                                 Date.valueOf(fechaAgregar.getText().toString()),
                                 Integer.parseInt(idAgregar.getText().toString())));
+                        Toast.makeText(getContext(), "Añadido correctamente", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
+                    Toast.makeText(getContext(), "En la id poner un número entero, en la fecha ponerla con esta sintaxis 1999-12-12", Toast.LENGTH_SHORT).show();
+                    System.out.println(e);
                 }
             }
         });
@@ -63,10 +69,11 @@ public class EntradaFragment extends Fragment {
                 try {
                     if (!idModificar.getText().toString().equalsIgnoreCase("") || !nombreModificar.getText().toString().equalsIgnoreCase("")){
                         homeViewModel.modifyUser(Integer.parseInt(idModificar.getText().toString()),nombreModificar.getText().toString());
+                        Toast.makeText(getContext(), "Modificado correctamente",Toast.LENGTH_SHORT).show();
                     }
                 }
                 catch (Exception e) {
-
+                    Toast.makeText(getContext(), "En ID tiene que haber un número entero",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -76,9 +83,12 @@ public class EntradaFragment extends Fragment {
                 try {
                     if(!idEliminar.getText().toString().equalsIgnoreCase("")){
                         homeViewModel.deleteUser(Integer.parseInt(idEliminar.getText().toString()));
+                        Toast.makeText(getContext(), "Eliminado correctamente",Toast.LENGTH_SHORT).show();
                     }
                 }
-                catch (Exception e) {}
+                catch (Exception e) {
+                    Toast.makeText(getContext(), "En ID tiene que haber un número entero",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

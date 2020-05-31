@@ -16,5 +16,10 @@
         android:name="com.example.postgresql.ui.dashboard.ResultadosFragment"
         android:label="@string/titleResultados"
         tools:layout="@layout/fragment_resultados" />
+    <fragment
+        android:id="@+id/usuariFragment"
+        android:name="com.example.postgresql.ui.usuari.UsuariFragment"
+        android:label="fragment_usuari"
+        tools:layout="@layout/fragment_usuari" />
 
 </navigation>
