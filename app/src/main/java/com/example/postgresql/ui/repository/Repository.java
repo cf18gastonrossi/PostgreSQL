@@ -1,10 +1,28 @@
 package com.example.postgresql.ui.repository;
 
+import android.content.Context;
+
+import com.example.postgresql.ui.Model.Usuari;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Repository {
+
+    private static Repository repository;
+    private Context context;
+
+    private Repository(Context context) {
+        this.context = context;
+    }
+
+    public static Repository getRepository(Context context) {
+        if (repository == null) {
+            repository = new Repository(context);
+        }
+        return repository;
+    }
 
     public static void main(String[] args) {
         new Thread() {
@@ -30,5 +48,14 @@ public class Repository {
                 }
             }
         }.start();
+    }
+
+    public void addNewUser(Usuari usuari) {
+    }
+
+    public void modifyUser(int id, String nombre) {
+    }
+
+    public void deleteUser(int id) {
     }
 }
