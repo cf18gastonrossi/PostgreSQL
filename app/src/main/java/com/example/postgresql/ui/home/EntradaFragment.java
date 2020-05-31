@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.postgresql.R;
-import com.example.postgresql.ui.models.Usuari;
+import com.example.postgresql.ui.Model.Usuari;
 
 import java.sql.Date;
 

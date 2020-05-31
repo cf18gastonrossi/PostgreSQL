@@ -1,4 +1,4 @@
-package com.example.postgresql.ui.models;
+package com.example.postgresql.ui.Model;
 
 import java.util.Date;
 

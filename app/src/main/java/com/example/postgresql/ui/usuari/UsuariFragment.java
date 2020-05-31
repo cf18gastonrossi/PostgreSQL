@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.postgresql.R;
-import com.example.postgresql.ui.models.Usuari;
+import com.example.postgresql.ui.Model.Usuari;
+
+import java.sql.SQLException;
 
 
 public class UsuariFragment extends Fragment {
@@ -32,6 +34,11 @@ public class UsuariFragment extends Fragment {
                 ViewModelProviders.of(this).get(UsuariViewModel.class);
         View root = inflater.inflate(R.layout.fragment_usuari, container, false);
 
+        id = root.findViewById(R.id.idRespuesta);
+        nombre = root.findViewById(R.id.nombreRespuesta);
+        fechaNacimiento = root.findViewById(R.id.fechaNacimiento);
+
+        updateUsuari(usuariViewModel.getUsuariAtPosition(getArguments().getInt("POSITION")));
 
         return root;
     }

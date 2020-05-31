@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigationResultado"
-        android:name="com.example.postgresql.ui.resultados.ResultadosFragment"
+        android:name="com.example.postgresql.ui.dashboard.ResultadosFragment"
         android:label="@string/titleResultados"
         tools:layout="@layout/fragment_resultados" />
     <fragment
