@@ -18,10 +18,14 @@ public class Repository {
         this.context = context;
     }
 
-    public static Repository getRepository(Context context) {
+    public static Repository get(Context context) {
         if (repository == null) {
             repository = new Repository(context);
         }
+        return repository;
+    }
+
+    public static Repository getRepository() {
         return repository;
     }
 
@@ -74,9 +78,31 @@ public class Repository {
         }
     }
 
-    public void modifyUser(int id, String nombre) {
+    public void modifyUser(int id, String nombre) throws SQLException, ClassNotFoundException {
+        Connection connection = startConnection();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("update usuaris set nombre =\"" + nombre +
+                    "\" where id=" + id + ";");
+        }
+        catch (Exception e) {
+        }
+        finally {
+            connection.close();
+        }
     }
 
-    public void deleteUser(int id) {
+    public void deleteUser(int id) throws SQLException, ClassNotFoundException {
+        Connection connection = startConnection();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("delete from usuaris where id=" + id + ";");
+        }
+        catch (Exception e) {
+
+        }
+        finally {
+            connection.close();
+        }
     }
 }

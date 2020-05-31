@@ -10,7 +10,7 @@ public class DirectorioApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Repository.getRepository(getApplicationContext());
+        Repository.get(getApplicationContext());
     }
 
     @Override
