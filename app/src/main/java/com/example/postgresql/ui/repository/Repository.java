@@ -7,6 +7,7 @@ import com.example.postgresql.ui.Model.Usuari;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Repository {
 
@@ -50,7 +51,27 @@ public class Repository {
         }.start();
     }
 
-    public void addNewUser(Usuari usuari) {
+    public Connection startConnection() throws ClassNotFoundException, SQLException {
+        Class.forName("org.postgresql.Driver");
+        Connection connection;
+        return connection = DriverManager.getConnection(
+                "jdbc:postgresql://172.31.61.84:5432/postgres", "postgres", "1234");
+    }
+
+    public void addNewUser(Usuari usuari) throws SQLException, ClassNotFoundException {
+        Connection connection = startConnection();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("insert into usuaris values(" + usuari.getId().toString() +
+                    ",\"" + usuari.getFechaNacimiento().toString() +
+                    "\",\"" + usuari.getNombre() + "\";");
+        }
+        catch (Exception e) {
+
+        }
+        finally {
+            connection.close();
+        }
     }
 
     public void modifyUser(int id, String nombre) {

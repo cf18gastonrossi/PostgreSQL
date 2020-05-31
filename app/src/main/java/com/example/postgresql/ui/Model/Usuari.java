@@ -1,11 +1,14 @@
 package com.example.postgresql.ui.Model;
 
+import java.util.Date;
+
 public class Usuari {
 
-    private String nombre, fechaNacimiento;
+    private String nombre;
+    private Date fechaNacimiento;
     private Integer id;
 
-    public Usuari(String nombre, String fechaNacimiento, Integer id) {
+    public Usuari(String nombre, Date fechaNacimiento, Integer id) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.id = id;
@@ -19,11 +22,11 @@ public class Usuari {
         this.nombre = nombre;
     }
 
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

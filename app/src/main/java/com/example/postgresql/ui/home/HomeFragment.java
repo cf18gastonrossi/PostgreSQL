@@ -17,6 +17,7 @@ import com.example.postgresql.R;
 import com.example.postgresql.ui.Model.Usuari;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -55,7 +56,7 @@ public class HomeFragment extends Fragment {
                     if (Usuari.checkInput(nombreAgregar.getText().toString(), fechaAgregar.getText().toString(), Integer.parseInt(idAgregar.getText().toString()))) {
                         homeViewModel.addNewUser(new Usuari(
                                 nombreAgregar.getText().toString(),
-                                fechaAgregar.getText().toString(),
+                                Date.valueOf(fechaAgregar.getText().toString()),
                                 Integer.parseInt(idAgregar.getText().toString())));
                     }
                 } catch (Exception e) {
