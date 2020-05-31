@@ -14,6 +14,11 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.postgresql.R;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -23,7 +28,7 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_entrada, container, false);
-
         return root;
     }
+
 }
