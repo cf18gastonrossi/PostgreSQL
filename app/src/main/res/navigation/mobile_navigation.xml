@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigationEntrada"
-        android:name="com.example.postgresql.ui.home.HomeFragment"
+        android:name="com.example.postgresql.ui.home.EntradaFragment"
         android:label="@string/titleEntrada"
         tools:layout="@layout/fragment_entrada" />
 
     <fragment
         android:id="@+id/navigationResultado"
-        android:name="com.example.postgresql.ui.dashboard.DashboardFragment"
+        android:name="com.example.postgresql.ui.dashboard.ResultadosFragment"
         android:label="@string/titleResultados"
         tools:layout="@layout/fragment_resultados" />
 

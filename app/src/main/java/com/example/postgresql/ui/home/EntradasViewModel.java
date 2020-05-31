@@ -7,11 +7,11 @@ import com.example.postgresql.ui.repository.Repository;
 
 import java.sql.SQLException;
 
-public class HomeViewModel extends ViewModel {
+public class EntradasViewModel extends ViewModel {
 
     private Repository repository;
 
-    public HomeViewModel() {
+    public EntradasViewModel() {
         repository = Repository.getRepository();
     }
 
