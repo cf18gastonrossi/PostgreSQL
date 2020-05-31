@@ -1,4 +1,4 @@
-package com.example.postgresql.ui.dashboard;
+package com.example.postgresql.ui.resultados;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.postgresql.R;
-import com.example.postgresql.ui.Model.Usuari;
-import com.example.postgresql.ui.RecyclerView.Adapter;
+import com.example.postgresql.ui.models.Usuari;
+import com.example.postgresql.ui.recyclerView.Adapter;
 
-import java.sql.Date;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ResultadosFragment extends Fragment {

@@ -1,14 +1,13 @@
-package com.example.postgresql.ui.dashboard;
+package com.example.postgresql.ui.resultados;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
-import com.example.postgresql.ui.Model.Usuari;
+import com.example.postgresql.ui.models.Usuari;
 import com.example.postgresql.ui.repository.Repository;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ResultadosViewModel extends ViewModel {

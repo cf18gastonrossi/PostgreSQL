@@ -1,4 +1,4 @@
-package com.example.postgresql.ui.RecyclerView;
+package com.example.postgresql.ui.recyclerView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.postgresql.R;
-import com.example.postgresql.ui.Model.Usuari;
+import com.example.postgresql.ui.models.Usuari;
 
 import java.util.ArrayList;
 
@@ -68,7 +68,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
                     bundle.putInt("POSITION", getAdapterPosition());
-                    Navigation.findNavController(view).navigate(R.id.usuariFragment, bundle);
+                    Navigation.findNavController(view).navigate(R.id.navHostFragment, bundle);
                 }
             });
         }

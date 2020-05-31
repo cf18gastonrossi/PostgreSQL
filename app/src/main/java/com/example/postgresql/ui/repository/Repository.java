@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.postgresql.ui.Model.Usuari;
+import com.example.postgresql.ui.models.Usuari;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
